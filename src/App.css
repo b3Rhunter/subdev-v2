@@ -1,0 +1,331 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+.priceCard::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:root {
+  --step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  --step-1: clamp(1.35rem, calc(1.20rem + 0.73vw), 1.77rem);
+  --step-2: clamp(1.62rem, calc(1.31rem + 1.53vw), 2.50rem);
+  --step-3: clamp(1.94rem, calc(1.39rem + 2.77vw), 3.53rem);
+  --step-4: clamp(2.33rem, calc(1.41rem + 4.63vw), 5.00rem);
+  --step-5: clamp(2.80rem, calc(1.32rem + 7.42vw), 7.07rem);
+
+  --text: #e5dfdc;
+  --background: #282b33;
+  --primary-button: #5d737e;
+  --secondary-button: #e5dfdc;
+  --accent: #89a4b3;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  text-wrap: balance;
+
+  background: #465982;
+  background: linear-gradient(to right, var(--primary-button) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  font-size: var(--step-3);
+}
+
+h2 {
+  font-size: var(--step-2);
+}
+
+h3 {
+  font-size: var(--step-1);
+}
+
+.App {
+  text-align: center;
+  font-size: var(--step-1);
+  line-height: 1.6;
+}
+
+.App-header,
+.App-main,
+.App-footer {
+  background-color: var(--background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.wrapper {
+  width: min(100% - 2rem, 65ch);
+  margin-inline: auto;
+}
+
+.flow>*+* {
+  margin-top: 1em;
+}
+
+img {
+  margin-bottom: -6em;
+  margin-inline: auto;
+  padding-left: 6em;
+}
+
+.parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: calc(50% - 2em);
+  margin-inline: 1em;
+}
+
+.subHeading {
+  font-size: var(--step-2);
+  color: var(--secondary-button);
+}
+
+.tag1 {
+  font-size: var(--step-2);
+  color: var(--secondary-button);
+  text-align: left;
+  margin-block: 1em;
+}
+
+.tag2 {
+  font-size: var(--step-1);
+  color: var(--secondary-button);
+  text-align: left;
+}
+
+.tag3 {
+  font-size: var(--step-0);
+  color: rgb(163, 163, 163);
+  text-align: left;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 50svh;
+  height: 50vh;
+  padding-inline: 1em;
+}
+
+.serviceHead {
+  font-size: var(--step-2);
+  color: var(--secondary-button);
+  text-align: center;
+  width: 100%;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding-inline: 1em;
+}
+
+.priceCard {
+  border: 1px solid white;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding: 1em;
+}
+
+.prices {
+  font-size: var(--step-1);
+  color: var(--secondary-button);
+  text-align: center;
+}
+
+.about {
+  max-height: 50svh;
+  max-height: 50vh;
+  overflow: auto;
+}
+
+.aboutHeader {
+  font-size: var(--step-2);
+  color: var(--secondary-button);
+  text-align: center;
+  width: 100%;
+}
+
+.about p {
+  margin-top: 1em;
+  font-size: var(--step-0);
+  color: var(--secondary-button);
+  text-align: left;
+  padding-inline: 1em;
+}
+
+.cardHead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+li {
+  font-size: var(--step-0);
+  color: var(--secondary-button);
+  text-align: left;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-inline: 1em;
+}
+
+::marker {
+  color: transparent
+}
+
+h4 {
+  text-align: center;
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: var(--step-0);
+  margin: 1em;
+  border-radius: 1em;
+
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  transition: 0.3s;
+}
+
+button:hover, button:focus {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(4px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.textColor {
+  background: #465982;
+  background: linear-gradient(to right, var(--primary-button) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: #282c34;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.203);
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(234, 226, 226, 0.306);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.409);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(234, 226, 226, 0.42);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.678);
+}
+
+
+@media screen and (min-width: 768px) {
+  .pricing {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100svh;
+    height: 100vh;
+  }
+
+  .cardHead {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .pricing h2, .pricing h3 {
+    width: 100%;
+    height: auto;
+    padding: 0.5em;
+    text-align: center;
+  }
+
+  .priceCard {
+    justify-content: flex-start;
+    width: 30%;
+    overflow: auto;
+  }
+
+}
