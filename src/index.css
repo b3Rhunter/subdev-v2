@@ -287,10 +287,6 @@ form button:hover {
   padding: 10px;
 }
 
-.signInForm {
-  
-}
-
 .closeBtn {
   transform: rotate(45deg);
   padding-inline: 10px;
