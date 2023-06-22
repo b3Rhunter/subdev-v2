@@ -289,8 +289,8 @@ form button:hover {
 
 .closeBtn {
   transform: rotate(45deg);
-  padding-inline: 10px;
-  padding-block: 5px;
+  padding-inline: 10px !important;
+  padding-block: 0px !important;
   border-radius: 50em !important;
   position: absolute;
   top: -15px;
