@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebase';
 import ChatRoom from './components/ChatRoom';
@@ -29,7 +30,6 @@ function App() {
         <div className='wrapper flow'>
           <h1>SubDev</h1>
           {!user || !selectedRoom ? <SignIn onRoomSelect={setSelectedRoom} /> : null}
-
         </div>
       </header>
 
@@ -115,7 +115,9 @@ function App() {
                 <p>No minimum commitment.</p>
                 <p>$5,000/m</p>
                 <p>Pause or cancel anytime</p>
-                <button>Get Started</button>
+                <button>
+                <a href="https://buy.stripe.com/00gdRp9hf1BTg9icMM" target='_blank' rel="noreferrer">Get Started</a>
+                </button>
               </div>
 
               <h4>What's Included:</h4>
@@ -137,7 +139,9 @@ function App() {
                 <p>Save $500 per month.</p>
                 <p>$4,500/m</p>
                 <p>Paid quarterly</p>
-                <button>Get Started</button>
+                <button>
+                <a href="https://buy.stripe.com/00g00zeBz2FX0akeUV" target='_blank' rel="noreferrer">Get Started</a>
+                </button>
               </div>
 
 
@@ -160,7 +164,9 @@ function App() {
                 <p>Save $1,000 per month.</p>
                 <p>$4,000/m</p>
                 <p>Paid annually</p>
-                <button>Get Started</button>
+                <button>
+                <a href="https://buy.stripe.com/4gwcNl1ON94lf5e4gi" target='_blank' rel="noreferrer">Get Started</a>
+                </button>
               </div>
 
 

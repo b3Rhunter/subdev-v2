@@ -319,6 +319,11 @@ form button:hover {
   right: 0;
 }
 
+a {
+  text-decoration: none;
+  color: var(--text)
+}
+
 @media screen and (max-width: 768px) {
   .wrapper {
     width: min(100% - 2rem, 65ch);
