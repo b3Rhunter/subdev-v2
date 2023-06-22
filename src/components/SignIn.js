@@ -45,7 +45,7 @@ const SignIn = ({onRoomSelect}) => {
         <button className='signInBtn' onClick={openSignIn}>Sign In</button>
   
       {showSignIn && (
-      <form onSubmit={signIn}>
+      <form className='signInForm' onSubmit={signIn}>
       <input
         name="email"
         type="email"
