@@ -1,0 +1,26 @@
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: #282c34;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.203);
+    border-radius: 100vw;
+    margin-block: 0.5em;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(234, 226, 226, 0.306);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.409);
+    border-radius: 100vw;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(234, 226, 226, 0.42);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.678);
+  }
+
+  main::-webkit-scrollbar {
+    display: none;
+  }

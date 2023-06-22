@@ -1,3 +1,22 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +29,303 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  --step-1: clamp(1.35rem, calc(1.20rem + 0.73vw), 1.77rem);
+  --step-2: clamp(1.62rem, calc(1.31rem + 1.53vw), 2.50rem);
+  --step-3: clamp(1.94rem, calc(1.39rem + 2.77vw), 3.53rem);
+  --step-4: clamp(2.33rem, calc(1.41rem + 4.63vw), 5.00rem);
+  --step-5: clamp(2.80rem, calc(1.32rem + 7.42vw), 7.07rem);
+
+  --text: #e5dfdc;
+  --background: #282b33;
+  --primary-button: #5d737e;
+  --secondary-button: #e5dfdc;
+  --accent: #89a4b3;
+}
+
+.app {
+  text-align: center;
+}
+
+.header,
+.slogan,
+.about,
+.services,
+.pricing,
+.footer
+{
+  background-color: var(--background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 1em;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  text-wrap: balance;
+  background: #465982;
+  background: linear-gradient(to right, var(--primary-button) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-block: 1em;
+}
+
+h1 {
+  font-size: var(--step-3);
+}
+
+h2 {
+  font-size: var(--step-2);
+}
+
+h3 {
+  font-size: var(--step-1);
+}
+
+p {
+  color: var(--secondary-button)
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: var(--step-0);
+  margin: 1em;
+  border-radius: 1em;
+  background: var(--primary-button);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: 0.3s;
+}
+
+button:hover, button:focus {
+  transform: translateY(-4px);
+  background: var(--accent);
+  color: var(--background);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(4px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+::marker {
+  color: transparent
+}
+
+.wrapper {
+  width: min(100% - 2rem, 65ch);
+  margin-inline: auto;
+}
+
+.flow > * + * {
+  margin-block: 0.5em;
+}
+
+.slogan {
+  text-align: left;
+}
+
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1em;
+  padding-inline: 1em;
+  padding-bottom: 2em;
+  margin-block: 1em;
+  box-shadow: 0 4px 30px #010c1446;
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+background: rgba(255, 255, 255, 0.05);
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 75svh;
+  height: 75vh;
+  margin: 1em;
+
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1em;
+}
+
+hr {
+  margin-block: 0.5em;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 80%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.message {
+  margin: 0.5em;
+  padding: 0.5em;
+  border-radius: 1.5em;
+  width: 50%;
+}
+
+.message.sent {
+  background-color: var(--background);
+  margin-left: auto;
+  margin-right: 10px;
+  border: 1px solid #fbfcfc36;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  border-bottom-left-radius: 0;
+}
+
+.message.received {
+  background-color: var(--primary-button);
+  margin-right: auto;
+  margin-left: 10px;
+  border: 1px solid #fffbfb3e;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  border-bottom-right-radius: 0;
+}
+
+.email {
+  font-size: clamp(0.7rem, calc(1rem + 0.22vw), 0.9rem);
+  color: var(--text);
+  text-align: left;
+  padding-left: 10px;
+  word-wrap: balance;
+}
+
+.messageText {
+  font-size: var(--step-0);
+  color: var(--text);
+  padding: 0.5em;
+}
+
+form {
+  display: flex;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid #d9d9d9;
+  border-radius: 0.5em;
+  width: calc(100% - 1em);
+}
+
+form input {
+  flex-grow: 1;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0.5em;
+}
+
+form button {
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--text);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0.5em;
+}
+
+form button:hover {
+  color: var(--background);
+  background-color: var(--text);
+}
+
+.signInCont form {
+  width: 100%;
+}
+
+.signInCont form button {
+  margin: 0.5em;
+  padding: 0.25em 0.5em;
+}
+
+.signInCont form input {
+  margin: 0.5em;
+  padding: 10px;
+}
+
+.closeBtn {
+  transform: rotate(45deg);
+  padding-inline: 10px;
+  padding-block: 5px;
+  border-radius: 50em !important;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.closeBtn:hover {
+  transform: rotate(45deg);
+}
+
+.chatBtn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  z-index: 999;
+}
+
+.chatBtn:hover {
+  background-color: transparent;
+}
+
+.chatlogo {
+  width: 50px;
+  height: 50px;
+}
+
+.signInBtn {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: min(100% - 2rem, 65ch);
+    margin-inline: auto;
+  }
+
+  .chat {
+    width: 90%;
+  }
 }
