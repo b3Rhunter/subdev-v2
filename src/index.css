@@ -397,6 +397,23 @@ a {
   margin: 1em;
 }
 
+.fancy-link {
+  background-color: var(--primary-button);
+  color: var(--secondary-button);
+  border: 1px solid var(--accent);
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  margin-top: 0.75em;
+  font-size: var(--step-0);
+  transition: 0.3s;
+}
+
+.fancy-link:hover {
+  transform: translateY(-4px);
+  color: var(--background);
+  background-color: var(--accent);
+}
+
 @media screen and (max-width: 768px) {
   .wrapper {
     width: min(100% - 2rem, 65ch);

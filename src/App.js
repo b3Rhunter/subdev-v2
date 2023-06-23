@@ -24,6 +24,20 @@ function App() {
     setShowChat(false);
   }
 
+  useEffect(() => {
+    function smoothScroll(event) {
+      event.preventDefault();
+      const targetId = event.currentTarget.getAttribute("href");
+      window.document.querySelector(targetId).scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', smoothScroll);
+    });
+  }, []);
+
   return (
     <div style={{ zIndex: '1' }} className="app">
       <div style={{ height: '100vh', width: '100vw', zIndex: '-1', position: 'fixed' }}>
@@ -37,6 +51,7 @@ function App() {
           <img className='logo' src={logo} alt='logo' />
           {!user || !selectedRoom ? <SignIn onRoomSelect={setSelectedRoom} /> : null}
         </div>
+        <a className='fancy-link' href="#getStarted">Get Started!</a>
       </header>
 
       <section style={{ zIndex: '1' }} className="slogan">
@@ -109,7 +124,7 @@ function App() {
         </div>
       </section>
 
-      <section className="pricing">
+      <section id="getStarted" className="pricing">
         <div className='wrapper flow'>
 
           <div className='card'>
