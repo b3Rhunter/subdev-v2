@@ -40,11 +40,11 @@ code {
   --step-4: clamp(2.33rem, calc(1.41rem + 4.63vw), 5.00rem);
   --step-5: clamp(2.80rem, calc(1.32rem + 7.42vw), 7.07rem);
 
-  --text: #e5dfdc;
-  --background: #282b33;
-  --primary-button: #5d737e;
-  --secondary-button: #e5dfdc;
-  --accent: #89a4b3;
+  --text: #dbf0df;
+  --background: #071309;
+  --primary-button: #07b03a;
+  --secondary-button: #ffffff;
+  --accent: #08c942;
 }
 
 .app {
@@ -326,11 +326,35 @@ form button:hover {
   position: fixed;
   top: 0;
   right: 0;
+  padding: 7px 25px;
+  font-size: var(--step-0) !important;
 }
 
 a {
   text-decoration: none;
   color: var(--text)
+}
+
+.services h3 {
+  font-size: var(--step-1);
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+
+.services p {
+  text-align: left;
+  font-size: var(--step-0);
+}
+
+.services div {
+  margin-top: 2em;
+}
+
+.logo {
+  max-width: 50%;
+  margin: auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -341,5 +365,9 @@ a {
 
   .chat {
     width: 90%;
+  }
+
+  .logo {
+    max-width: 80%;
   }
 }

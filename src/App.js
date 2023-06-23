@@ -6,6 +6,7 @@ import ChatRoom from './components/ChatRoom';
 import SignIn from './components/SignIn';
 import ChatRoomList from './components/ChatRoomList';
 import chatLogo from './chatSVG.svg';
+import logo from './logo.png';
 import './scrollbar.css';
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
 
       <header className="header">
         <div className='wrapper flow'>
-          <h1>SubDev</h1>
+          <img className='logo' src={logo} alt='logo'/>
           {!user || !selectedRoom ? <SignIn onRoomSelect={setSelectedRoom} /> : null}
         </div>
       </header>
@@ -42,7 +43,6 @@ function App() {
 
       <section className="about">
         <div className='wrapper flow'>
-          <h2>About</h2>
           <p>
             At SubDev, we bring to you an innovative, cost-effective solution for your tech development needs. In today's digital era, the significance of an optimized, interactive, and efficient online presence can't be overstated, but the logistics and costs of maintaining a full-time development team can be challenging for many businesses. This is where SubDev comes in.
           </p>
@@ -70,7 +70,7 @@ function App() {
 
         <div className='wrapper flow'>
           <h3>Back End Development</h3>
-          <p>The invisible engine of the website. It's all about making sure everything you do on a website, pke making an order or signing up, works perfectly behind the scenes.</p>
+          <p>The invisible engine of the website. It's all about making sure everything you do on a website, like making an order or signing up, works perfectly behind the scenes.</p>
         </div>
 
         <div className='wrapper flow'>
@@ -85,22 +85,22 @@ function App() {
 
         <div className='wrapper flow'>
           <h3>A.I. Intergration</h3>
-          <p>This is about making your website or app smarter with Artificial Intelpgence. It can help automate tasks, provide personapzed recommendations, or even chat with users!</p>
+          <p>This is about making your website or app smarter with Artificial Inteligence. It can help automate tasks, provide personalized recommendations, or even chat with users!</p>
         </div>
 
         <div className='wrapper flow'>
           <h3>Ethereum Integration</h3>
-          <p>This is about integrating blockchain technology into your website or app. It opens up possibipties pke accepting payments or creating secure, tamper-proof records.</p>
+          <p>This is about integrating blockchain technology into your website or app. It opens up possibilities like accepting payments or creating secure, tamper-proof records.</p>
         </div>
 
         <div className='wrapper flow'>
           <h3>Hosting Services</h3>
-          <p>Every website needs a place to pve on the internet, and that's what web hosting is. This service ensures your website is available to the world, 24/7.</p>
+          <p>Every website needs a place to live on the internet, and that's what web hosting is. This service ensures your website is available to the world, 24/7.</p>
         </div>
 
         <div className='wrapper flow'>
           <h3>Domain Registration</h3>
-          <p>This service is about securing your very own address on the internet, pke www.yourbusiness.com. It's pke registering your business name, but in the onpne world.</p>
+          <p>This service is about securing your very own address on the internet, like www.yourbusiness.com. It's like registering your business name, but in the digital world.</p>
         </div>
       </section>
 
@@ -122,9 +122,9 @@ function App() {
 
               <h4>What's Included:</h4>
               <p>One request at a time</p>
-              <p>Unpmited jobs</p>
-              <p>Unpmited users</p>
-              <p>Unpmited revisions</p>
+              <p>Unlimited jobs</p>
+              <p>Unlimited users</p>
+              <p>Unlimited revisions</p>
               <p>Easy credit-card payments</p>
               <p>Pause or cancel anytime</p>
 
@@ -148,9 +148,9 @@ function App() {
 
               <h4>What's Included:</h4>
               <p>One request at a time</p>
-              <p>Unpmited jobs</p>
-              <p>Unpmited users</p>
-              <p>Unpmited revisions</p>
+              <p>Unlimited jobs</p>
+              <p>Unlimited users</p>
+              <p>Unlimited revisions</p>
               <p>Easy credit-card payments</p>
 
             </div>
@@ -173,9 +173,9 @@ function App() {
 
               <h4>What's Included:</h4>
               <p>One request at a time</p>
-              <p>Unpmited jobs</p>
-              <p>Unpmited users</p>
-              <p>Unpmited revisions</p>
+              <p>Unlimited jobs</p>
+              <p>Unlimited users</p>
+              <p>Unlimited revisions</p>
               <p>Easy credit-card payments</p>
 
             </div>

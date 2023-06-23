@@ -1,7 +1,7 @@
 /* Scrollbar */
 ::-webkit-scrollbar {
     width: 0.5em;
-    background-color: #282c34;
+    background-color: transparent;
   }
   
   ::-webkit-scrollbar-track {
@@ -11,13 +11,13 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: rgba(234, 226, 226, 0.306);
+    background: #08c942;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.409);
     border-radius: 100vw;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(234, 226, 226, 0.42);
+    background: #07b03a;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.678);
   }
 
