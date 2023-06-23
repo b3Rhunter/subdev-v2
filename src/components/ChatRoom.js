@@ -35,13 +35,13 @@ const ChatRoom = ({ user, roomId }) => {
   
   return (
     <>
-<main>
+<main className='chatMessages'>
   {messages && messages.map((msg, index) => <ChatMessage key={index} message={msg} />)}
   <div ref={dummy}></div>
 </main>
-      <form onSubmit={sendMessage}>
-        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="type message..." />
-        <button type="submit" disabled={!formValue}>Send</button>
+      <form className='messageForm' onSubmit={sendMessage}>
+        <input className='messageInput' value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="type message..." />
+        <button className='messageBtn' type="submit" disabled={!formValue}>Send</button>
       </form>
     </>
   );

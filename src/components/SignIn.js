@@ -47,18 +47,20 @@ const SignIn = ({onRoomSelect}) => {
       {showSignIn && (
       <form className='signInForm' onSubmit={signIn}>
       <input
+        className='signInInput'
         name="email"
         type="email"
         placeholder="Email"
         onChange={e => setEmail(e.target.value)}
       />
       <input
+      className='signInInput'
         name="password"
         type="password"
         placeholder="Password"
         onChange={e => setPassword(e.target.value)}
       />
-      <button type="submit">Sign In</button>
+      <button className='signUpBtn' type="submit">Sign In</button>
       <button className='signUpBtn' onClick={signUp}>Sign Up</button>
     </form>
       )}

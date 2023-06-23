@@ -59,7 +59,6 @@ code {
 .pricing,
 .footer
 {
-
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -160,7 +159,7 @@ background: rgba(255, 255, 255, 0.05);
 .chat {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   position: fixed;
@@ -181,24 +180,40 @@ background: rgba(255, 255, 255, 0.05);
 
 hr {
   margin-block: 0.5em;
+  width: 100%;
 }
 
-main {
+.chatMessages {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 80%;
   width: 100%;
-  overflow-y: auto;
-  z-index: 1;
+  max-height: 80%;
+  overflow-y: scroll;
+  padding: 10px;
 }
+
 
 .message {
   margin: 0.5em;
   padding: 0.5em;
   border-radius: 1.5em;
   width: 50%;
+  min-height: 100px;
+  height: 100%;
+  word-wrap: break-word;
+}
+
+.message::-webkit-scrollbar {
+  display: none;
+}
+
+.email,
+.messageText {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .message.sent {
@@ -206,10 +221,9 @@ main {
   margin-left: auto;
   margin-right: 10px;
   border: 1px solid #fbfcfc36;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
   border-bottom-left-radius: 0;
+  min-height: 100px;
+  height: auto;
 }
 
 .message.received {
@@ -217,27 +231,29 @@ main {
   margin-right: auto;
   margin-left: 10px;
   border: 1px solid #fffbfb3e;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
   border-bottom-right-radius: 0;
+  min-height: 100px;
+  height: auto;
 }
+
 
 .email {
   font-size: clamp(0.7rem, calc(1rem + 0.22vw), 0.9rem);
   color: var(--text);
   text-align: left;
   padding-left: 10px;
-  word-wrap: balance;
+  margin: auto;
+  padding: auto;
 }
 
 .messageText {
   font-size: var(--step-0);
   color: var(--text);
-  padding: 0.5em;
+  margin: auto;
+  padding: auto;
 }
 
-form {
+.messageForm {
   display: flex;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -248,7 +264,7 @@ form {
   width: calc(100% - 1em);
 }
 
-form input {
+.messageInput {
   flex-grow: 1;
   border: none;
   border-radius: 5px;
@@ -256,22 +272,22 @@ form input {
   margin: 0.5em;
 }
 
-form button {
+.messageBtn {
   margin-left: 10px;
   background-color: rgba(255, 255, 255, 0.2);
   color: var(--text);
   border: none;
-  padding: 10px;
+  padding: 5px 10px;
   border-radius: 5px;
   margin: 0.5em;
 }
 
-form button:hover {
+.messageBtn:hover {
   color: var(--background);
   background-color: var(--text);
 }
 
-.signInCont form {
+.signInForm {
   max-width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -281,23 +297,25 @@ form button:hover {
   border: none;
 }
 
-.signInCont form button {
+.signUpBtn {
   margin: 0.5em;
   padding: 0.25em 0.5em;
-  width: 100%;
+  width: calc(100% - 1em);
 }
 
-.signInCont form input {
-  width: 100%;
+.signInInput {
+  width: calc(100% - 1em);
   margin: 0.5em;
   padding: 10px;
+  text-align: center;
+  border-radius: 1em;
 }
 
 .closeBtn {
   transform: rotate(45deg);
-  padding-inline: 10px !important;
-  padding-block: 0px !important;
-  border-radius: 50em !important;
+  padding-inline: 10px;
+  padding-block: 0px;
+  border-radius: 50em;
   position: absolute;
   top: -15px;
   right: -15px;
@@ -333,7 +351,7 @@ form button:hover {
   top: 0;
   right: 0;
   padding: 7px 25px;
-  font-size: var(--step-0) !important;
+  font-size: var(--step-0);
 }
 
 a {
@@ -372,6 +390,7 @@ a {
 .logo {
   max-width: 50%;
   margin: auto;
+  z-index: -1;
 }
 
 .showMoreBtn {

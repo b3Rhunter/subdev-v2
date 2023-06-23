@@ -25,21 +25,21 @@ function App() {
   }
 
   return (
-    <div style={{zIndex: '1'}} className="app">
+    <div style={{ zIndex: '1' }} className="app">
       <div style={{ height: '100vh', width: '100vw', zIndex: '-1', position: 'fixed' }}>
-      <Canvas camera={{ position: [0, 0, 120] }}>
-        <Cube />
-      </Canvas>
-    </div>
+        <Canvas camera={{ position: [0, 0, 120] }}>
+          <Cube />
+        </Canvas>
+      </div>
       <header className="header">
 
-        <div style={{zIndex: '1'}} className='wrapper flow'>
-          <img className='logo' src={logo} alt='logo'/>
+        <div className='wrapper flow'>
+          <img className='logo' src={logo} alt='logo' />
           {!user || !selectedRoom ? <SignIn onRoomSelect={setSelectedRoom} /> : null}
         </div>
       </header>
 
-      <section style={{zIndex: '1'}} className="slogan">
+      <section style={{ zIndex: '1' }} className="slogan">
         <div className='wrapper flow'>
           <h2>Developer subscriptions to scale your business.</h2>
           <p>Your one-stop shop for all your development needs.</p>
@@ -120,7 +120,7 @@ function App() {
                 <p>$5,000/m</p>
                 <p>Pause or cancel anytime</p>
                 <button>
-                <a href="https://buy.stripe.com/00gdRp9hf1BTg9icMM" target='_blank' rel="noreferrer">Get Started</a>
+                  <a href="https://buy.stripe.com/00gdRp9hf1BTg9icMM" target='_blank' rel="noreferrer">Get Started</a>
                 </button>
               </div>
 
@@ -144,7 +144,7 @@ function App() {
                 <p>$4,500/m</p>
                 <p>Paid quarterly</p>
                 <button>
-                <a href="https://buy.stripe.com/00g00zeBz2FX0akeUV" target='_blank' rel="noreferrer">Get Started</a>
+                  <a href="https://buy.stripe.com/00g00zeBz2FX0akeUV" target='_blank' rel="noreferrer">Get Started</a>
                 </button>
               </div>
 
@@ -169,7 +169,7 @@ function App() {
                 <p>$4,000/m</p>
                 <p>Paid annually</p>
                 <button>
-                <a href="https://buy.stripe.com/4gwcNl1ON94lf5e4gi" target='_blank' rel="noreferrer">Get Started</a>
+                  <a href="https://buy.stripe.com/4gwcNl1ON94lf5e4gi" target='_blank' rel="noreferrer">Get Started</a>
                 </button>
               </div>
 
@@ -186,19 +186,19 @@ function App() {
           </div>
         </div>
       </section>
-
-      {showChat && (
-        <section className='chat'>
-          {user && selectedRoom && <ChatRoom user={user} roomId={selectedRoom} />}
-          <button className='closeBtn' onClick={closeChat}>+</button>
-        </section>
-      )}
-      {!showChat && (
-        <button className='chatBtn' onClick={openChat}>
-          <img className='chatlogo' src={chatLogo} alt='chat' />
-        </button>
-      )}
-
+      <div style={{ zIndex: '9999px' }}>
+        {showChat && (
+          <section className='chat'>
+            {user && selectedRoom && <ChatRoom user={user} roomId={selectedRoom} />}
+            <button className='closeBtn' onClick={closeChat}>+</button>
+          </section>
+        )}
+        {!showChat && (
+          <button className='chatBtn' onClick={openChat}>
+            <img className='chatlogo' src={chatLogo} alt='chat' />
+          </button>
+        )}
+      </div>
       <section className="footer">
         <div className='wrapper flow'>
           <h3>© 2023 SubDev. All rights reserved.</h3>
