@@ -7,6 +7,7 @@
 * {
   margin: 0;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 html {
@@ -58,7 +59,7 @@ code {
 .pricing,
 .footer
 {
-  background-color: var(--background);
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -67,6 +68,7 @@ code {
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 1em;
+  z-index: 1;
 }
 
 h1,
@@ -79,6 +81,7 @@ h3 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-block: 1em;
+  z-index: 1;
 }
 
 h1 {
@@ -94,7 +97,8 @@ h3 {
 }
 
 p {
-  color: var(--secondary-button)
+  color: var(--secondary-button);
+  z-index: 1;
 }
 
 button {
@@ -108,6 +112,7 @@ button {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   transition: 0.3s;
+  z-index: 1;
 }
 
 button:hover, button:focus {
@@ -186,6 +191,7 @@ main {
   height: 80%;
   width: 100%;
   overflow-y: auto;
+  z-index: 1;
 }
 
 .message {
@@ -307,7 +313,7 @@ form button:hover {
   position: fixed;
   bottom: 0;
   right: 0;
-  padding: 0;
+  padding: 0.25em;
   background-color: transparent;
   border: none;
   z-index: 999;
@@ -341,12 +347,23 @@ a {
   margin: 0;
   margin-bottom: 0.5em;
   text-align: left;
+  cursor: pointer;
 }
 
 .services p {
   text-align: left;
   font-size: var(--step-0);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
 }
+
+.services h3:hover + p {
+  max-height: 200px; 
+  opacity: 1;
+}
+
 
 .services div {
   margin-top: 2em;
@@ -355,6 +372,10 @@ a {
 .logo {
   max-width: 50%;
   margin: auto;
+}
+
+.showMoreBtn {
+  margin: 1em;
 }
 
 @media screen and (max-width: 768px) {

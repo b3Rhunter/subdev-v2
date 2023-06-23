@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebase';
 import ChatRoom from './components/ChatRoom';
 import SignIn from './components/SignIn';
-import ChatRoomList from './components/ChatRoomList';
 import chatLogo from './chatSVG.svg';
 import logo from './logo.png';
+import { Canvas, useThree } from '@react-three/fiber';
+import Cube from './components/Cube';
 import './scrollbar.css';
 
 function App() {
@@ -25,16 +25,21 @@ function App() {
   }
 
   return (
-    <div className="app">
-
+    <div style={{zIndex: '1'}} className="app">
+      <div style={{ height: '100vh', width: '100vw', zIndex: '-1', position: 'fixed' }}>
+      <Canvas camera={{ position: [0, 0, 120] }}>
+        <Cube />
+      </Canvas>
+    </div>
       <header className="header">
-        <div className='wrapper flow'>
+
+        <div style={{zIndex: '1'}} className='wrapper flow'>
           <img className='logo' src={logo} alt='logo'/>
           {!user || !selectedRoom ? <SignIn onRoomSelect={setSelectedRoom} /> : null}
         </div>
       </header>
 
-      <section className="slogan">
+      <section style={{zIndex: '1'}} className="slogan">
         <div className='wrapper flow'>
           <h2>Developer subscriptions to scale your business.</h2>
           <p>Your one-stop shop for all your development needs.</p>
@@ -58,7 +63,7 @@ function App() {
                 We're more than just a service provider; we're your tech partners. At SubDev, your success is our success. So let's scale your business together with SubDev - your one-stop shop for all your development needs.
               </p>
             </>}
-          <button onClick={() => setShowMore(!showMore)}>{showMore ? 'Show Less' : 'Show More'}</button>
+          <button className='showMoreBtn' onClick={() => setShowMore(!showMore)}>{showMore ? 'Show Less' : 'Show More'}</button>
         </div>
       </section>
 
@@ -106,7 +111,6 @@ function App() {
 
       <section className="pricing">
         <div className='wrapper flow'>
-          <h2>Pricing:</h2>
 
           <div className='card'>
             <div>
