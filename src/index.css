@@ -11,6 +11,7 @@
 }
 
 a {
+  all: unset;
   color: white;
   text-decoration: none;
 }
