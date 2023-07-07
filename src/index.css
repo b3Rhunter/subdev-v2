@@ -10,6 +10,11 @@
   overflow-x: hidden;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 html {
   color-scheme: light dark;
 }
